@@ -1,5 +1,5 @@
 	dc.l 0xFFFFFF00
-	dc.l 0x0000020A /* init */
+	dc.l 0x0000020A	/* init */
 	dc.l 0x00000200
 	dc.l 0x00000200
 	dc.l 0x00000200
@@ -62,7 +62,7 @@
 	dc.l 0x00000200
 	dc.l 0x00000200
 	dc.l 0x00000200
-	subqw #1,%d5
+	subqw #1,%d5	/* SEGA MEGA DRIVE (C)SEGA 1991.JUN */
 	.short 0x4741
 	moveal %a5,%a0
 	.short 0x4547
@@ -75,7 +75,7 @@
 	.short 0x4120
 	movew 0x39312e4a:l,%a0@-
 	subqw #0x2,%a6
-	.short 0x8347
+	.short 0x8347	/* DomesticName */
 	.short 0x8343
 	.short 0x838a
 	.short 0x8341
@@ -91,8 +91,8 @@
 	.short 0x8140
 	.short 0x8140
 	.short 0x8140
-	/* movel %a0@-,%d0 - .short 0x2020 */
-	.short 0x2020 /* This is Padding */
+					/* movel %a0@-,%d0 - .short 0x2020 */
+	.short 0x2020	/* This is Padding */
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
@@ -100,7 +100,7 @@
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	orw %a0@-,%d1
+	orw %a0@-,%d1	/* OverseasName */
 	orw %a3@(-32152:w),%d1
 	orw %a4@-,%d1
 	orw %a5@(-32142:w),%d1
@@ -120,13 +120,13 @@
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	.short 0x4d4b
+	.short 0x4d4b	/* ProductCode */
 	movel %a0@(48,%d3:w),%d0
 	.short 0x3031
 	.short 0x3132
 	movew %a5@(12336:w),%a0@-
-	.short 0xaab5 /* Checksum */
-	tstb %a0@-
+	.short 0xaab5	/* Checksum */
+	tstb %a0@-		/* Peripherials */
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
@@ -134,11 +134,23 @@
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	orib #0,%d0
-	orib #-1,%d7
+	orib #0,%d0		/* RomStart */
+	orib #-1,%d7	/* RomEnd 	*/
 	.short 0xffff
 	orib #-1,%d0
 	.short 0xffff
+	.short 0x2020	/* SramCode */
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020	/* ModemCode */
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020	/* Reserved */
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
@@ -159,19 +171,7 @@
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	tstw %a5@
+	tstw %a5@		/* CountryCode */
 	.short 0x4520
 	.short 0x2020
 	.short 0x2020
