@@ -125,7 +125,7 @@
 	.short 0x3031
 	.short 0x3132
 	movew %a5@(12336:w),%a0@-
-	.short 0xaab5
+	.short 0xaab5 /* Checksum */
 	tstb %a0@-
 	.short 0x2020
 	.short 0x2020
