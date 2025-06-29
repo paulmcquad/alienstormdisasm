@@ -91,14 +91,15 @@
 	.short 0x8140
 	.short 0x8140
 	.short 0x8140
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
+	/* movel %a0@-,%d0 - .short 0x2020 */
+	.short 0x2020 /* This is Padding */
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
 	orw %a0@-,%d1
 	orw %a3@(-32152:w),%d1
 	orw %a4@-,%d1
@@ -111,14 +112,14 @@
 	.short 0x8140
 	.short 0x8140
 	.short 0x8140
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
 	.short 0x4d4b
 	movel %a0@(48,%d3:w),%d0
 	.short 0x3031
@@ -126,58 +127,58 @@
 	movew %a5@(12336:w),%a0@-
 	.short 0xaab5
 	tstb %a0@-
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
 	orib #0,%d0
 	orib #-1,%d7
 	.short 0xffff
 	orib #-1,%d0
 	.short 0xffff
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
 	tstw %a5@
 	.short 0x4520
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
-	movel %a0@-,%d0
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
+	.short 0x2020
 	movew #256,0xa11100:l
 	rte
 	nop
@@ -16371,7 +16372,7 @@
 	addib #22,%d1
 	.short 0xffe0
 	.short 0xeaea
-	movel %a0@-,%d0
+	.short 0x2020
 	oriw #-1,%a4@+
 	.short 0x00ff
 	.short 0x0002, 0x0a01
@@ -18131,7 +18132,7 @@
 	orib #0,%d0
 	orib #0,%d0
 	oril #67239904,%a5@(6:w)
-	movel %a0@-,%d0
+	.short 0x2020
 	.short 0xfafa
 	oril #67239900,%d3
 	.short 0x0006, 0x2424
@@ -18294,7 +18295,7 @@
 	addib #26,%d1
 	.short 0xffe0
 	rorw %a6@-
-	movel %a0@-,%d0
+	.short 0x2020
 	oril #-65281,%d3
 	.short 0x0002, 0x0a01
 	orib #3,%d0
@@ -29419,12 +29420,12 @@
 	.short 0x000d
 	addib #-32,%d0
 	.short 0xfffc
-	movel %a0@-,%d0
+	.short 0x2020
 	subib #13,%d4
 	.short 0xff00
 	.short 0xffe0
 	.short 0xfffc
-	movel %a0@-,%d0
+	.short 0x2020
 	subib #13,%d4
 	.short 0xffff
 	.short 0x40ff
@@ -29442,12 +29443,12 @@
 	.short 0x000d
 	addib #-32,%d0
 	.short 0xfffc
-	movel %a0@-,%d0
+	.short 0x2020
 	subib #13,%d4
 	.short 0xff00
 	.short 0xffe0
 	.short 0xfffc
-	movel %a0@-,%d0
+	.short 0x2020
 	subib #13,%d4
 	.short 0xffff
 	.short 0x40ff
@@ -40308,7 +40309,7 @@
 	movel %a2@-,%d1
 	.short 0x0002, 0x2200
 	.short 0x0002, 0x2000
-	movel %a0@-,%d0
+	.short 0x2020
 	dc.l 0x00000200
 	.short 0x0000, 0x2000
 	dc.l 0x00000200
@@ -40355,7 +40356,7 @@
 	andib #0,%d0
 	.short 0x0200, 0x0200
 	andib #0,%d0
-	movel %a0@-,%d0
+	.short 0x2020
 	.short 0x0022, 0x2200
 	andib #0,%a2@-
 	movel %a0@-,%d1
@@ -93753,7 +93754,7 @@
 	bccs .+98
 	addw %d3,%a0@-
 	subl %d1,%d0
-	movel %a0@-,%d0
+	.short 0x2020
 	bcss .-121
 	.short 0x4546
 	.short 0xbf7c
@@ -174953,7 +174954,7 @@
 	.short 0x03f5
 	blss .+35
 	.short 0x06e6
-	movel %a0@-,%d0
+	.short 0x2020
 	moveaw %a4@,%a6
 	.short 0xf351
 	.short 0x96bd
@@ -192342,7 +192343,7 @@
 	cmpib #19,%d0
 	subqb #3,%a7@
 	btstb %d7,%a3@+
-	movel %a0@-,%d0
+	.short 0x2020
 	divuw #24882,%d0
 	movew %a1@-,%a0@(7967:w)
 	moveb %a7@+,%a7@-
