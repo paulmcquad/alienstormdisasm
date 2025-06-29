@@ -62,19 +62,7 @@
 	dc.l 0x00000200
 	dc.l 0x00000200
 	dc.l 0x00000200
-	subqw #1,%d5	/* SEGA MEGA DRIVE (C)SEGA 1991.JUN */
-	.short 0x4741
-	moveal %a5,%a0
-	.short 0x4547
-	.short 0x4120
-	negw %a2@
-	.short 0x4956
-	.short 0x4520
-	moveal %d3,%a4
-	movel %a3@,%a4@(17735:w)
-	.short 0x4120
-	movew 0x39312e4a:l,%a0@-
-	subqw #0x2,%a6
+	.ascii "SEGA MEGA DRIVE (C)SEGA 1991.JUN"
 	.short 0x8347	/* DomesticName */
 	.short 0x8343
 	.short 0x838a
@@ -171,14 +159,7 @@
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	tstw %a5@		/* CountryCode */
-	.short 0x4520
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
+	.ascii "JUE             " /* CountryCode */
 	movew #256,0xa11100:l
 	rte
 	nop
