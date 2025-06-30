@@ -79,15 +79,11 @@
 	.short 0x8140
 	.short 0x8140
 	.short 0x8140
-					/* movel %a0@-,%d0 - .short 0x2020 */
-	.short 0x2020	/* This is Padding */
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
+	/* movel %a0@-,%d0 - .short 0x2020 */
+	dc.l 0x20202020	/* This is Padding */
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
 	orw %a0@-,%d1	/* OverseasName */
 	orw %a3@(-32152:w),%d1
 	orw %a4@-,%d1
@@ -100,60 +96,38 @@
 	.short 0x8140
 	.short 0x8140
 	.short 0x8140
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
 	.ascii "MK 00001121-00"	/* ProductCode */
 	.short 0xaab5			/* Checksum */
 	tstb %a0@-				/* Peripherials */
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
 	.short 0x2020
 	orib #0,%d0				/* RomStart */
 	orib #-1,%d7			/* RomEnd 	*/
 	.short 0xffff
 	orib #-1,%d0
 	.short 0xffff
-	.short 0x2020			/* SramCode */
+	dc.l 0x20202020			/* SramCode */
+	dc.l 0x20202020
 	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020			/* ModemCode */
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020			/* Reserved */
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
-	.short 0x2020
+	dc.l 0x20202020			/* ModemCode */
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020			/* Reserved */
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
+	dc.l 0x20202020
 	.short 0x2020
 	.ascii "JUE             " /* CountryCode */
 	movew #256,0xa11100:l
