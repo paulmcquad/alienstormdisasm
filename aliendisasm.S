@@ -108,13 +108,9 @@
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	.short 0x4d4b	/* ProductCode */
-	movel %a0@(48,%d3:w),%d0
-	.short 0x3031
-	.short 0x3132
-	movew %a5@(12336:w),%a0@-
-	.short 0xaab5	/* Checksum */
-	tstb %a0@-		/* Peripherials */
+	.ascii "MK 00001121-00"	/* ProductCode */
+	.short 0xaab5			/* Checksum */
+	tstb %a0@-				/* Peripherials */
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
@@ -122,23 +118,23 @@
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	orib #0,%d0		/* RomStart */
-	orib #-1,%d7	/* RomEnd 	*/
+	orib #0,%d0				/* RomStart */
+	orib #-1,%d7			/* RomEnd 	*/
 	.short 0xffff
 	orib #-1,%d0
 	.short 0xffff
-	.short 0x2020	/* SramCode */
+	.short 0x2020			/* SramCode */
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	.short 0x2020	/* ModemCode */
+	.short 0x2020			/* ModemCode */
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
-	.short 0x2020	/* Reserved */
+	.short 0x2020			/* Reserved */
 	.short 0x2020
 	.short 0x2020
 	.short 0x2020
